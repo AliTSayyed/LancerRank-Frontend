@@ -108,7 +108,7 @@ export class FreelancerReviewComponent {
   getScore() {
     let freelancerScoreTotal: number = 0;
     let freelancerScore: string = '0.00';
-    if (this.freelancerReviews.length !== 0) {
+    if (Array.isArray(this.freelancerReviews) && this.freelancerReviews.length !== 0) {
       for (let freelancer of this.freelancerReviews) {
         freelancerScoreTotal += freelancer.rating;
         // for each rating, increment the stars object's field by one. 
