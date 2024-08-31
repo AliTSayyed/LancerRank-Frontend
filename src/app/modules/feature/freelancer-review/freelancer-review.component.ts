@@ -109,7 +109,7 @@ export class FreelancerReviewComponent {
     let freelancerScoreTotal: number = 0;
     let freelancerScore: string = '0.00';
     if (this.freelancerReviews.length !== 0) {
-      this.freelancerReviews.forEach((freelancer) => {
+      for (let freelancer of this.freelancerReviews) {
         freelancerScoreTotal += freelancer.rating;
         // for each rating, increment the stars object's field by one. 
         switch (freelancer.rating) {
@@ -129,7 +129,7 @@ export class FreelancerReviewComponent {
             this.stars.fiveStar++;
             break;
         }
-      });
+      }
 
       freelancerScore = (
         freelancerScoreTotal / this.freelancerReviews.length
