@@ -88,7 +88,7 @@ export class FreelancerReviewComponent {
   // use the id to fetch the freelancer object 
   fetchFreelancer(id: string) {
     this.freelancerService
-      .getOneFreelancer(`https://lancerrank-backend.onrender.com/${id}`)
+      .getOneFreelancer(`https://lancerrank-backend.onrender.com/api/freelancers/${id}`)
       .subscribe((freelancer: Freelancer) => {
         this.freelancer = freelancer;
       });
@@ -97,7 +97,7 @@ export class FreelancerReviewComponent {
   // use the id to fetch all the reviews for the freelancer. Filtering done in the backend. Call the get score here since this.freelancerReviews will be empty outside this scope. 
   fetchFreelancerReview(id: string) {
     this.reviewService
-      .getReviewsNoParam(`https://lancerrank-backend.onrender.com/${id}`)
+      .getReviewsNoParam(`https://lancerrank-backend.onrender.com/api/freelancers/${id}`)
       .subscribe((reviews: Review[]) => {
         this.freelancerReviews = reviews; 
         this.getScore(); // calculate score as well since this.freelancerReviews is in the same scope.
