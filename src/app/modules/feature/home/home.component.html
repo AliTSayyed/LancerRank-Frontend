@@ -1,0 +1,55 @@
+<!-- Main Title and Images -->
+<div class="main-wrapper">
+  <div class="left-main column">
+    <div class="title-left">
+      The <span class="title-left-color">#1 Trusted Site</span> for
+      <span class="title-left-style">Authentic</span> Freelancer Reviews.
+    </div>
+    <div class="caption">Interested in quality work?</div>
+    <div class="caption">
+      Click on any user or freelancer to view their profile!
+    </div>
+    <div class="button-container row gap-2">
+      <button pButton label="Browse Reviews" severity="secondary" (click)="browseReviews()"></button>
+      <button pButton label="Write a Review" severity="primary" (click)="submissionPage()"></button>
+    </div>
+    <div class="mouse row align-center gap-1">
+      <img class="mouse-image" src="images/mouse-3.png" />
+      <div class="caption">Scroll down to browse reviews</div>
+    </div>    
+  </div>
+
+  <div class="right-main column">
+    <img class="front-page-pictures" src="images/front-page-pictures-4.png" />
+  </div>
+</div>
+
+<!-- Scroll down mouse -->
+
+<!-- Browse Reviews banner -->
+<div class="browse-reviews column full-center full-width-element">
+  &darr; Browse Our Freelancer Reviews &darr;
+</div>
+
+<!-- Filter Component -->
+<div class="filter">
+  <app-filter styleClass="custom-filter" (reviewsFiltered)="onReviewsFiltered($event)"></app-filter>
+</div>
+
+<!-- Review boxes-->
+<div class="reviews-display grid gap-1 space-between">
+  <app-review *ngFor="let review of reviews" [review]="review"></app-review>
+</div>
+
+<!-- Paginator -->
+
+<div class="Paginator full-width-element">
+  <p-paginator styleClass="custom-paginator"
+    [rows]="rows"
+    [first]="first"
+    [totalRecords]="totalRecords"
+    [rowsPerPageOptions]="[9, 15, 30]"
+    [showCurrentPageReport]="true"
+    (onPageChange)="onPageChange($event)"
+  ></p-paginator>
+</div>

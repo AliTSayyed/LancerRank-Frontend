@@ -1,0 +1,48 @@
+<div class="filter-bar row justify-center">
+  <p-toolbar styleClass="custom-toolbar">
+    <div class="p-toolbar-group-left gap-2">
+      <!-- Sort by Rating -->
+      <p-dropdown
+        [options]="ratingSortOptions"
+        [(ngModel)]="selectedRatingSort"
+        placeholder="Sort by Rating"
+        [showClear]="true"
+      >
+      </p-dropdown>
+
+      <!-- Sort by Date -->
+      <p-dropdown
+        [options]="dateSortOptions"
+        [(ngModel)]="selectedDateSort"
+        placeholder="Sort by Date"
+        [showClear]="true"
+      >
+      </p-dropdown>
+
+      <!-- Search Bar -->
+      <p-dropdown
+        [options]="freelancerSortOptions"
+        [(ngModel)]="freelancerSearch"
+        placeholder="Select Freelancer"
+        [editable]="true"
+        [showClear]="true"
+      >
+      </p-dropdown>
+    </div>
+    <div class="p-toolbar-group-right gap-2">
+      <!-- Apply or Clear Filters Buttons (optional) -->
+      <button
+        pButton
+        type="button"
+        label="Apply Filters"
+        (click)="applyFilters()"
+      ></button>
+      <button
+        pButton
+        type="button"
+        label="Clear Filters"
+        (click)="clearFilters()"
+      ></button>
+    </div>
+  </p-toolbar>
+</div>

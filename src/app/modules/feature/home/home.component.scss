@@ -1,0 +1,145 @@
+.main-wrapper {
+  padding: 0px 30px;
+  display: grid; /* Use grid for layout */
+  grid-template-columns: 2fr 1fr; /* Define two equal-width columns */
+  gap: 20px; /* Optional: Add space between the columns */
+  align-items: center; /* Vertically align items if necessary */
+}
+
+@media (max-width: 768px) {
+  .main-wrapper {
+    grid-template-columns: 1fr; /* Stack columns vertically on small screens */
+  }
+}
+
+.title-left {
+  font-size: 90px;
+  color: black;
+  padding-bottom: 10px;
+  font-weight: 900;
+}
+
+.title-left-color {
+  color: var(--secondary-color);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
+}
+
+.title-left-style {
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .title-left {
+    font-size: 50px;
+    text-align: center;
+  }
+}
+
+.caption {
+  color: var(--grey-color);
+  font-weight: 500;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .caption {
+    font-size: 15px;
+    text-align: center;
+  }
+}
+
+.button-container {
+  justify-content: flex-start;
+  margin-top: 30px;
+  button {
+    width: 40%;
+    font-weight: 500;
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .button-container {
+    justify-content: center;
+    button {
+      width: 50%;
+      font-weight: 500;
+      font-size: 25px;
+    }
+  }
+}
+
+.right-main {
+  flex-shrink: 0;
+  .front-page-pictures {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 768px) {
+  .right-main .front-page-pictures {
+    width: 80%;
+    margin-top: 20px;
+    margin: auto;
+  }
+}
+
+.mouse {
+  margin-top: 40px;
+  .mouse-image {
+    width: 35px;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 768px) {
+  .mouse {
+    justify-content: center;
+    margin-top: 40px;
+    .mouse-image {
+      width: 25px;
+      object-fit: contain;
+    }
+  }
+}
+
+.browse-reviews {
+  margin-top: 20px;
+  width: auto;
+  background-color: var(--secondary-color);
+  padding: 20px 0;
+  box-shadow: var(--border-box-shadow);
+  font-size: 30px;
+  font-weight: 600;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .browse-reviews {
+    font-size: 22px;
+  }
+}
+
+.filter {
+  margin-top: 20px;
+}
+
+.Paginator {
+  padding-top: 20px;
+  margin-bottom: -5px;
+}
+
+:host {
+  ::ng-deep .custom-paginator {
+    border-radius: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews-display {
+    grid-template-columns: 1fr; /* Stack columns vertically on small screens */
+  }
+}

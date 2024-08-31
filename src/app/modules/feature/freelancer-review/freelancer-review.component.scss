@@ -1,0 +1,127 @@
+.freelancer-profile-container {
+  background-color: #efefef;
+  width: 40%;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border: 5px solid var(--secondary-color);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.freelancer-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.freelancer-name {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+}
+
+.freelancer-image {
+  width: 150px;
+}
+
+.overall-score {
+  font-size: 40px;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.star-ratings-container {
+  margin: auto;
+  padding-right: 80px;
+  justify-content: center;
+  width: 100%;
+}
+
+.star-rank {
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.number-of-ratings {
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.star-bar-line {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 0.5rem;
+}
+
+.bar {
+  height: 20px;
+  background-color: var(--secondary-color);
+  border-radius: 2px;
+}
+
+/* user reviews */
+
+.freelancer-reviews {
+  width: 50%;
+  margin: auto;
+  padding-bottom: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .freelancer-profile-container {
+    width: 100%; /* Full width on smaller screens */
+    padding: 10px; /* Adjust padding */
+  }
+
+  .freelancer-name {
+    font-size: 20px;
+  }
+
+  .overall-score {
+    font-size: 24px;
+  }
+
+  .freelancer-image {
+    width: 80px;
+  }
+
+  .bar {
+    height: 10px; /* Further reduce bar height */
+  }
+
+  .number-of-ratings {
+    width: 100%; /* Ensure full width */
+    gap: 8px; /* Adjust gap */
+  }
+
+  .star-bar-line {
+    display: flex; /* Ensure flex layout */
+    flex-direction: row; /* Ensure row layout */
+  }
+
+  .freelancer-reviews {
+    width: 100%; /* Make the container take full width */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 5px; /* Add padding inside the container */
+  }
+
+  .freelancer-reviews app-review {
+    width: 95%; /* Make each review wider */
+    margin-bottom: 5px; /* Add space between reviews */
+    padding: 5px; /* Add padding inside each review */
+    border-radius: 5px; /* Round the corners */
+    box-sizing: border-box; /* Include padding in width calculations */
+    overflow: hidden; /* Ensure content stays within the box */
+  }
+ 
+}
