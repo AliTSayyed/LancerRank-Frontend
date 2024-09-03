@@ -84,13 +84,19 @@ export class FreelancerReviewComponent {
     five: 5,
   };
 
-  // Get freelancers and users to input into the review component. 
-  fetchFreelancersAndUsers() {
+  // Get freelancers to input into the review component.
+  fetchFreelancers() {
     this.freelancerService
-      .getFreelancers('https://lancerrank-backend.onrender.com/api/freelancers/')
+      .getFreelancers(
+        'https://lancerrank-backend.onrender.com/api/freelancers/'
+      )
       .subscribe((response: Freelancer[]) => {
         this.freelancers = response;
       });
+  }
+
+  // Get users to input into the review component.
+  fetchUsers() {
     this.userService
       .getUsers('https://lancerrank-backend.onrender.com/api/users/')
       .subscribe((response: User[]) => {
@@ -101,7 +107,9 @@ export class FreelancerReviewComponent {
   // use the id to fetch the freelancer object
   fetchFreelancer(id: string) {
     this.freelancerService
-      .getOneFreelancer(`https://lancerrank-backend.onrender.com/api/freelancers/${id}`)
+      .getOneFreelancer(
+        `https://lancerrank-backend.onrender.com/api/freelancers/${id}`
+      )
       .subscribe((freelancer: Freelancer) => {
         this.freelancer = freelancer;
       });
@@ -110,7 +118,9 @@ export class FreelancerReviewComponent {
   // use the id to fetch all the reviews for the freelancer. Filtering done in the backend. Call the get score here since this.freelancerReviews will be empty outside this scope.
   fetchFreelancerReview(id: string) {
     this.reviewService
-      .getReviewsNoParam(`https://lancerrank-backend.onrender.com/api/reviews/freelancers/${id}`)
+      .getReviewsNoParam(
+        `https://lancerrank-backend.onrender.com/api/reviews/freelancers/${id}`
+      )
       .subscribe((reviews: Review[]) => {
         this.freelancerReviews = reviews;
         this.getScore(); // calculate score as well since this.freelancerReviews is in the same scope.
@@ -164,13 +174,14 @@ export class FreelancerReviewComponent {
     };
   }
 
-    // on initilization, get the id from the url, if it exists, get the freelancer object and the reviews related to the freelancer.
-    ngOnInit(): void {
-      this.freelancerId = this.route.snapshot.paramMap.get('id');
-      if (this.freelancerId) {
-        this.fetchFreelancersAndUsers();
-        this.fetchFreelancer(this.freelancerId);
-        this.fetchFreelancerReview(this.freelancerId);
-      }
+  // on initilization, get the id from the url, if it exists, get the freelancer object and the reviews related to the freelancer.
+  ngOnInit(): void {
+    this.freelancerId = this.route.snapshot.paramMap.get('id');
+    if (this.freelancerId) {
+      this.fetchFreelancers();
+      this.fetchUsers();
+      this.fetchFreelancer(this.freelancerId);
+      this.fetchFreelancerReview(this.freelancerId);
     }
+  }
 }

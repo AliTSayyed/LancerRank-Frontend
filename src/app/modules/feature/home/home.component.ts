@@ -61,20 +61,29 @@ export class HomeComponent {
   // get reviews using the review service from the core module.
   fetchReviews(page: number, perPage: number) {
     this.reviewService
-      .getReviews('https://lancerrank-backend.onrender.com/api/reviews/', { page, perPage })
+      .getReviews('https://lancerrank-backend.onrender.com/api/reviews/', {
+        page,
+        perPage,
+      })
       .subscribe((reviews: Reviews) => {
         this.reviews = reviews.reviews;
         this.totalRecords = reviews.total;
       });
   }
 
-  // Get freelancers and users to input into the review component.
-  fetchFreelancersAndUsers() {
+  // Get freelancers to input into the review component.
+  fetchFreelancers() {
     this.freelancerService
-      .getFreelancers('https://lancerrank-backend.onrender.com/api/freelancers/')
+      .getFreelancers(
+        'https://lancerrank-backend.onrender.com/api/freelancers/'
+      )
       .subscribe((response: Freelancer[]) => {
         this.freelancers = response;
       });
+  }
+
+  // Get users to input into the review component.
+  fetchUsers() {
     this.userService
       .getUsers('https://lancerrank-backend.onrender.com/api/users/')
       .subscribe((response: User[]) => {
@@ -104,9 +113,10 @@ export class HomeComponent {
     this.totalRecords = this.filteredReviews.length;
   }
 
-    //on page initilization send the first 9 reviews from the database. More reviews can be seen with the paginator.
-    ngOnInit() {
-      this.fetchFreelancersAndUsers();
-      this.fetchReviews(1, this.rows);
-    }
+  //on page initilization send the first 9 reviews from the database. More reviews can be seen with the paginator.
+  ngOnInit() {
+    this.fetchFreelancers();
+    this.fetchUsers();
+    this.fetchReviews(1, this.rows);
+  }
 }
