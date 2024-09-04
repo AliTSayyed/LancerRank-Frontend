@@ -76,7 +76,6 @@
   color: red;
 }
 
-
 .submit-button button[pButton] {
   font-size: 17px;
   margin-left: 20px;
@@ -92,7 +91,7 @@ textarea.ng-touched.ng-invalid {
   border: 1px solid red;
 }
 
-textarea{
+textarea {
   background-color: var(--bg-color);
   margin-left: 20px;
   width: 60%;
@@ -103,12 +102,12 @@ textarea{
   font-weight: 400;
 }
 
-input{
+input {
   background-color: var(--bg-color);
   font-weight: 400;
 }
 
-.thank-you{
+.thank-you {
   padding-top: 30%;
 }
 
@@ -117,6 +116,7 @@ input{
     width: 100%; /* Ensure full width on smaller screens */
     max-width: 350px; /* Slightly smaller max width */
     margin-top: 20px;
+    height: 90%;
     padding: 10px; /* Adjust padding for smaller screens */
   }
 
@@ -155,9 +155,7 @@ input{
     padding: 8px 12px;
   }
 
-  
-  .thank-you{
+  .thank-you {
     padding-top: 50%;
   }
-
 }

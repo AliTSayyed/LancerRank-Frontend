@@ -15,7 +15,6 @@
 
 .title-left-color {
   color: var(--secondary-color);
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
 }
 
 .title-left-style {
@@ -84,7 +83,6 @@
 
 /* Media Queries for screens less than 768px */
 @media (max-width: 768px) {
-
   /* Main Wrapper */
   .main-wrapper {
     grid-template-columns: 1fr; /* Stack columns vertically on small screens */
