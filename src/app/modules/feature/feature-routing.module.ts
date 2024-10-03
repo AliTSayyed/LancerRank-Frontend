@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { SubmitReviewComponent } from './submit-review/submit-review.component';
 import { FreelancerReviewComponent } from './freelancer-review/freelancer-review.component';
 import { UserReviewComponent } from './user-review/user-review.component';
+import { ManualFreelancerReviewComponent } from './manual-freelancer-review/manual-freelancer-review.component';
 
 const routes: Routes = [{
   path:'',
@@ -16,6 +17,10 @@ const routes: Routes = [{
 {
   path:'freelancer/:id', // use id to specify the freelancer 
   component: FreelancerReviewComponent
+},
+{
+  path:'manualfreelancer/Bill', // manuall average score review page (for when database is down)
+  component: ManualFreelancerReviewComponent
 },
 {
   path:'user/:id', // use id to specify the user 

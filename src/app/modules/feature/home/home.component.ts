@@ -113,8 +113,15 @@ export class HomeComponent {
     this.totalRecords = this.filteredReviews.length;
   }
 
+  showAlert() {
+    alert(
+      'Current database is down. You are viewing manually created reviews. When the database is up, reviews can be submitted and the homepage, freelancer page, and user page will dynamically update.'
+    );
+  }
+
   //on page initilization send the first 9 reviews from the database. More reviews can be seen with the paginator.
   ngOnInit() {
+    this.showAlert();
     this.fetchFreelancers();
     this.fetchUsers();
     this.fetchReviews(1, this.rows);

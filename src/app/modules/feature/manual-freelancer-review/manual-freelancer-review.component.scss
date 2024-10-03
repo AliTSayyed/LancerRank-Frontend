@@ -1,143 +1,95 @@
-.main-wrapper {
-  padding: 0px 30px;
-  display: grid; /* Use grid for layout */
-  grid-template-columns: 2fr 1fr; /* Define two equal-width columns */
-  gap: 20px; /* Optional: Add space between the columns */
-  align-items: center; /* Vertically align items if necessary */
+/*--------------------- For manual average score ----------------- */
+/* Freelancer Profile Container */
+.freelancer-profile-container {
+  background-color: #efefef;
+  width: 100%; /* Reduced width */
+  max-width: 600px; /* Set a max-width to keep it smaller */
+  margin: auto; /* Center the container */
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border: 5px solid var(--secondary-color);
+  padding: 10px; /* Reduced padding */
+  display: grid;
+  grid-template-columns: 1fr; /* Single column layout */
+  gap: 10px; /* Add space between elements */
 }
 
-.title-left {
-  font-size: 90px;
-  color: black;
-  padding-bottom: 10px;
-  font-weight: 900;
+/* Freelancer Image Container */
+.freelancer-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px 0; /* Reduced top and bottom margins */
 }
 
-.title-left-color {
+.freelancer-name {
+  font-size: 20px; /* Smaller font size */
+  font-weight: bold;
+  margin-bottom: 5px; /* Reduced margin */
   color: var(--secondary-color);
+  text-align: center;
 }
 
-.title-left-style {
-  font-style: italic;
+.freelancer-image {
+  width: 100px; /* Smaller image */
+  margin-bottom: 5px; /* Reduced margin */
 }
 
-.caption {
-  color: var(--grey-color);
-  font-weight: 500;
-  font-size: 18px;
+.overall-score {
+  font-size: 24px; /* Smaller font size */
+  font-weight: bold;
+  color: var(--secondary-color);
+  text-align: center;
+  margin-bottom: 5px; /* Reduced margin */
 }
 
-.button-container {
-  justify-content: flex-start;
-  margin-top: 30px;
-  button {
-    width: 40%;
-    font-weight: 500;
-    font-size: 30px;
-  }
+
+.star-ratings-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  width: 100%;
 }
 
-.right-main {
-  flex-shrink: 0;
-  .front-page-pictures {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    object-fit: cover;
-  }
+.number-of-ratings {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px; /* Adjust gap between star bars */
 }
 
-.mouse {
-  margin-top: 40px;
-  .mouse-image {
-    width: 35px;
-    object-fit: contain;
-  }
+.star-bar-line {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Star bar and rating on the right */
+  gap: 10px; /* Space between bar and rating */
+  width: 100%;
 }
 
-.browse-reviews {
-  margin-top: 20px;
-  width: auto;
+.bar {
+  height: 20px;
   background-color: var(--secondary-color);
-  padding: 20px 0;
-  box-shadow: var(--border-box-shadow);
-  font-size: 30px;
-  font-weight: 600;
-  color: white;
+  border-radius: 2px;
 }
 
-.filter {
-  margin-top: 20px;
+/* User reviews section */
+.freelancer-reviews {
+  width: 100%; /* Full width */
+  max-width: 600px; /* Optional: set a max-width */
+  margin: auto; /* Center the container horizontally */
+  padding: 20px; /* Padding inside the container */
+  display: flex;
+  flex-direction: column;
 }
 
-.Paginator {
-  padding-top: 20px;
-  margin-bottom: -5px;
+/* Ensure each review is full width */
+.freelancer-reviews app-review {
+  width: 100%; /* Make each review take full width */
+  max-width: 500px;
+  border-radius: 5px;
+  overflow: hidden; /* Ensure content stays within the box */
 }
-
-:host {
-  ::ng-deep .custom-paginator {
-    border-radius: 0px;
-  }
-}
-
-/* Media Queries for screens less than 768px */
-@media (max-width: 768px) {
-  /* Main Wrapper */
-  .main-wrapper {
-    grid-template-columns: 1fr; /* Stack columns vertically on small screens */
-  }
-
-  /* Title */
-  .title-left {
-    font-size: 50px;
-    text-align: center;
-  }
-
-  /* Caption */
-  .caption {
-    font-size: 15px;
-    text-align: center;
-  }
-
-  /* Button Container */
-  .button-container {
-    justify-content: center;
-    button {
-      width: 50%;
-      font-weight: 500;
-      font-size: 25px;
-    }
-  }
-
-  /* Right Main Image */
-  .right-main .front-page-pictures {
-    width: 80%;
-    margin-top: 20px;
-    margin: auto;
-  }
-
-  /* Mouse Icon */
-  .mouse {
-    justify-content: center;
-    margin-top: 40px;
-    .mouse-image {
-      width: 25px;
-      object-fit: contain;
-    }
-  }
-
-  /* Browse Reviews */
-  .browse-reviews {
-    font-size: 22px;
-  }
-
-  /* Reviews Display */
-  .reviews-display {
-    grid-template-columns: 1fr; /* Stack columns vertically on small screens */
-  }
-}
-
 
 
 /* --------------------- For the manual reviews -------------------------------------- */

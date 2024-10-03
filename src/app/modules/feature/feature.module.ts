@@ -16,9 +16,10 @@ import { InputTextModule } from 'primeng/inputtext';
 import { RatingModule } from 'primeng/rating';
 import { UserReviewComponent } from './user-review/user-review.component';
 import { BackHomeButtonComponent } from "../shared/back-home-button/back-home-button.component";
+import { ManualFreelancerReviewComponent } from './manual-freelancer-review/manual-freelancer-review.component';
 
 @NgModule({
-  declarations: [HomeComponent, SubmitReviewComponent, FreelancerReviewComponent, UserReviewComponent],
+  declarations: [HomeComponent, SubmitReviewComponent, FreelancerReviewComponent, UserReviewComponent, ManualFreelancerReviewComponent],
   imports: [
     CommonModule,
     FeatureRoutingModule,

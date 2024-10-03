@@ -68,4 +68,15 @@ export class SubmitReviewComponent {
     this.reviewSubmitted = false;
     this.reviewForm.reset();
   }
+
+  showAlert() {
+    alert(
+      'Current database is down. POST requests will be sent to the databse and will dynamically update the homepage, freelancer reviews, and user reviews when the database is up.'
+    );
+  }
+
+   // on initilization, tell user this is a manual review page
+   ngOnInit(): void {
+      this.showAlert();
+  }
 }

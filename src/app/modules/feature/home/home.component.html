@@ -39,6 +39,72 @@
 <!-- Review boxes, vairables in the app review are input into the review component-->
 <div class="reviews-display grid gap-1 space-between">
   <app-review *ngFor="let review of reviews" [review]="review" [freelancers]="freelancers" [users]="users"></app-review>
+  <!-- Manual reviews temporarily set for when database is down-->
+  <div class="review-box mt-25">
+    <div class="user-container">
+      <img class="user-icon-image" src="images/user-icon-4.png" />
+      <a>John</a
+      >Reviewed
+      <a
+        class="freelancer-name-link"
+        routerLink="/manualfreelancer/Bill"
+        routerLinkActive="active"
+        >Bill</a
+      >
+    </div>
+    <div class="row space-evenly ml-15 gap-1">
+      <p-rating [ngModel]="5" readonly="true" [cancel]="false" />
+      <div class="review-date">Oct 3rd, 2024</div>
+    </div>
+    <div class="review-description">
+      Amazing person and did a great job with the final product!
+    </div>
+  </div>
+
+
+  <div class="review-box mt-25">
+    <div class="user-container">
+      <img class="user-icon-image" src="images/user-icon-4.png" />
+      <a>Patrick</a
+      >Reviewed
+      <a
+        class="freelancer-name-link"
+        routerLink="/manualfreelancer/Bill"
+        routerLinkActive="active"
+        >Bill</a
+      >
+    </div>
+    <div class="row space-evenly ml-15 gap-1">
+      <p-rating [ngModel]="5" readonly="true" [cancel]="false" />
+      <div class="review-date">Oct 2nd, 2024</div>
+    </div>
+    <div class="review-description">
+      Did exactly what I wanted and would definitely recommend him.
+    </div>
+  </div>
+
+  <div class="review-box mt-25">
+    <div class="user-container">
+      <img class="user-icon-image" src="images/user-icon-4.png" />
+      <a>Sam</a
+      >Reviewed
+      <a
+        class="freelancer-name-link"
+        routerLink="/manualfreelancer/Bill"
+        routerLinkActive="active"
+        >Bill</a
+      >
+    </div>
+    <div class="row space-evenly ml-15 gap-1">
+      <p-rating [ngModel]="5" readonly="true" [cancel]="false" />
+      <div class="review-date">Oct 1st, 2024</div>
+    </div>
+    <div class="review-description">
+      Easy to work with and gave a quality product before the deadline.
+    </div>
+  </div>
+
+  <!-- End of manual reviews-->
 </div>
 
 <!-- Paginator -->
